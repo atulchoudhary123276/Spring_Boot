@@ -13,14 +13,14 @@ import javax.validation.constraints.NotNull;
 public class EmployeeDto {
 
     private Long empId;
-    @NotEmpty
+    @NotEmpty(message = "firstName is not Empty")
     private String firstName;
-    @NotEmpty
+    @NotEmpty(message = "lastName is not Empty")
     private String lastName;
-    @NotEmpty
+    @NotEmpty(message = "address is not Empty")
     private String address;
-    @NotEmpty
+    @NotEmpty(message = "city is not Empty")
     private String city;
-    @NotNull
+    @NotNull(message = "pincode is not Empty")
     private Integer pincode;
 }

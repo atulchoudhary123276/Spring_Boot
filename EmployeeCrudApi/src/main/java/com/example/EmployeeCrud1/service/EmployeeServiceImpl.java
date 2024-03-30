@@ -6,11 +6,10 @@ import com.example.EmployeeCrud1.repository.EmployeeRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.Map;
 import java.util.stream.Collectors;
+
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
@@ -26,73 +25,64 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public List<EmployeeDto> fetchAllEmployees() {
-        List<EmployeeModel> allEmployees = employeeRepository.findAll();
-        return convertToDtoList(allEmployees);
+        return convertToDtoList(employeeRepository.findAll());
     }
 
     @Override
     public EmployeeDto getEmployeeById(Long id) {
-        Optional<EmployeeModel> employee = employeeRepository.findById(id);
-        if (employee.isPresent()) {
-            return convertToDto(employee.get());
-        }
-        return null;
+       return employeeRepository.findById(id).
+            map(this::convertToDto).orElse(null);
     }
 
     @Override
     public EmployeeDto updateEmployeeById(Long id, EmployeeDto employee) {
-        Optional<EmployeeModel> employeeOptional = employeeRepository.findById(id);
-        if (employeeOptional.isPresent()) {
-            EmployeeModel originalEmployee = employeeOptional.get();
-            originalEmployee.setFirstName(employee.getFirstName());
-            originalEmployee.setLastName(employee.getLastName());
-            originalEmployee.setAddress(employee.getAddress());
-            originalEmployee.setCity(employee.getCity());
-            originalEmployee.setPincode(employee.getPincode());
-            //update existing resource
-            return convertToDto(employeeRepository.save(originalEmployee));
-        }
-        else {
-            //create new resource
-            return convertToDto(employeeRepository.save(convertToModel(employee)));
-        }
-
+        return employeeRepository.findById(id)
+                .map(employeeModel -> {
+                    employeeModel.setFirstName(employee.getFirstName());
+                    employeeModel.setLastName(employee.getLastName());
+                    employeeModel.setAddress(employee.getAddress());
+                    employeeModel.setCity(employee.getCity());
+                    employeeModel.setPincode(employee.getPincode());
+                    //update existing resource
+                    return convertToDto(employeeRepository.save(employeeModel));
+                })
+                //create new resource when it not exists
+                .orElseGet(()-> convertToDto(employeeRepository.save(convertToModel(employee))));
     }
 
     @Override
-    public EmployeeDto updateEmployeePartiallyById(Long id, EmployeeDto employee) {
-        Optional<EmployeeModel> employeeOptional = employeeRepository.findById(id);
-        if (employeeOptional.isPresent()) {
-            EmployeeModel originalEmployee = employeeOptional.get();
+    public EmployeeDto updateEmployeePartiallyById(Long id, Map<String, Object> fields) {
+        return employeeRepository.findById(id)
+                .map(employeeModel -> {
+                    for (Map.Entry<String, Object> entry : fields.entrySet()) {
+                        String key = entry.getKey();
+                        Object value = entry.getValue();
+                        switch (key) {
+                            case "firstName":
+                                employeeModel.setFirstName(value.toString());
+                                break;
+                            case "lastName":
+                                employeeModel.setLastName(value.toString());
+                                break;
+                            case "address":
+                                employeeModel.setAddress(value.toString());
+                                break;
+                            case "city":
+                                employeeModel.setCity(value.toString());
+                                break;
+                            case "pincode":
+                                employeeModel.setPincode((Integer) value);
+                                break;
+                            default:
+                                // handle unknown keys
+                                return null;
+                        }
+                    }
+                    // update resource fields only if all keys were recognized
+                    return convertToDto(employeeRepository.save(employeeModel));
 
-            // Update fields if provided in the DTO
-
-            if (Objects.nonNull(employee.getFirstName()) && !employee.getFirstName().isEmpty()) {
-                originalEmployee.setFirstName(employee.getFirstName());
-                return convertToDto(employeeRepository.save(originalEmployee));
-            }
-            if (Objects.nonNull(employee.getLastName()) && !employee.getLastName().isEmpty()) {
-                originalEmployee.setLastName(employee.getLastName());
-                return convertToDto(employeeRepository.save(originalEmployee));
-            }
-            if (Objects.nonNull(employee.getAddress()) && !employee.getAddress().isEmpty()) {
-                originalEmployee.setAddress(employee.getAddress());
-                return convertToDto(employeeRepository.save(originalEmployee));
-            }
-            if (Objects.nonNull(employee.getCity()) && !employee.getCity().isEmpty()) {
-                originalEmployee.setCity(employee.getCity());
-                return convertToDto(employeeRepository.save(originalEmployee));
-            }
-            if (Objects.nonNull(employee.getPincode())) {
-                originalEmployee.setPincode(employee.getPincode());
-                return convertToDto(employeeRepository.save(originalEmployee));
-            }
-            // return if field not found
-            return null;
-
-        }
-        //if resource not found
-        return null;
+                })
+                .orElse(null);  //return null if resource not exist
     }
 
     @Override
@@ -102,6 +92,10 @@ public class EmployeeServiceImpl implements EmployeeService {
             return true;
         }
         return false;
+    }
+    @Override
+    public boolean existById(Long id){
+        return employeeRepository.existsById(id);
     }
 
     private EmployeeDto convertToDto(EmployeeModel employeeModel) {

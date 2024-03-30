@@ -3,6 +3,7 @@ package com.example.EmployeeCrud1.service;
 import com.example.EmployeeCrud1.dto.EmployeeDto;
 
 import java.util.List;
+import java.util.Map;
 
 public interface EmployeeService {
     EmployeeDto saveEmployee(EmployeeDto employee);
@@ -14,6 +15,7 @@ public interface EmployeeService {
     EmployeeDto updateEmployeeById(Long id, EmployeeDto employee);
 
     boolean deleteEmployeeById(Long id);
-    EmployeeDto updateEmployeePartiallyById(Long id, EmployeeDto employee);
+    EmployeeDto updateEmployeePartiallyById(Long id, Map<String, Object> fields);
+   boolean existById(Long id);
 
 }

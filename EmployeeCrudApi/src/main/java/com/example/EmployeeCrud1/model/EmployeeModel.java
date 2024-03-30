@@ -9,8 +9,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "emp",uniqueConstraints =
-        { @UniqueConstraint(name = "empId", columnNames = { "empId" })})
+@Table(name = "emp")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -18,8 +17,6 @@ public class EmployeeModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long empId;
-//    @NotEmpty
-//    private String empId;
     @NotEmpty
     private String firstName;
     @NotEmpty
