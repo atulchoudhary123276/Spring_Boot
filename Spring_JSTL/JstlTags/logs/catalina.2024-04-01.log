@@ -1,0 +1,176 @@
+01-Apr-2024 11:55:17.936 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/8.5.99
+01-Apr-2024 11:55:17.942 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Feb 14 2024 22:52:13 UTC
+01-Apr-2024 11:55:17.942 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 8.5.99.0
+01-Apr-2024 11:55:17.942 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+01-Apr-2024 11:55:17.943 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            5.15.0-101-generic
+01-Apr-2024 11:55:17.943 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+01-Apr-2024 11:55:17.943 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-11-openjdk-amd64
+01-Apr-2024 11:55:17.943 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           11.0.22+7-post-Ubuntu-0ubuntu220.04.1
+01-Apr-2024 11:55:17.943 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+01-Apr-2024 11:55:17.944 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/admin1/IdeaProjects/Spring_JSTL/JstlTags
+01-Apr-2024 11:55:17.945 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/admin1/Downloads/apache-tomcat-8.5.99
+01-Apr-2024 11:55:17.956 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+01-Apr-2024 11:55:17.956 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+01-Apr-2024 11:55:17.957 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+01-Apr-2024 11:55:17.957 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+01-Apr-2024 11:55:17.957 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+01-Apr-2024 11:55:17.957 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/admin1/Downloads/apache-tomcat-8.5.99
+01-Apr-2024 11:55:17.957 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/admin1/IdeaProjects/Spring_JSTL/JstlTags
+01-Apr-2024 11:55:17.957 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/admin1/IdeaProjects/Spring_JSTL/JstlTags/temp
+01-Apr-2024 11:55:17.958 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/admin1/IdeaProjects/Spring_JSTL/JstlTags/conf/logging.properties
+01-Apr-2024 11:55:17.958 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+01-Apr-2024 11:55:17.958 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/snap/intellij-idea-community/493/lib/idea_rt.jar=39893:/snap/intellij-idea-community/493/bin
+01-Apr-2024 11:55:17.958 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+01-Apr-2024 11:55:17.958 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+01-Apr-2024 11:55:18.025 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8081"]
+01-Apr-2024 11:55:18.057 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 1037 ms
+01-Apr-2024 11:55:18.162 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+01-Apr-2024 11:55:18.163 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/8.5.99]
+01-Apr-2024 11:55:18.216 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/admin1/IdeaProjects/Spring_JSTL/JstlTags/conf/Catalina/localhost/JstlCoreTag.xml]
+01-Apr-2024 11:55:18.999 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/admin1/IdeaProjects/Spring_JSTL/JstlTags/conf/Catalina/localhost/JstlCoreTag.xml] has finished in [784] ms
+01-Apr-2024 11:55:19.004 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8081"]
+01-Apr-2024 11:55:19.022 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 964 ms
+01-Apr-2024 11:57:05.260 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8081"]
+01-Apr-2024 11:57:05.262 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+01-Apr-2024 11:57:05.287 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8081"]
+01-Apr-2024 11:57:05.296 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8081"]
+01-Apr-2024 12:02:18.713 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/8.5.99
+01-Apr-2024 12:02:18.756 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Feb 14 2024 22:52:13 UTC
+01-Apr-2024 12:02:18.756 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 8.5.99.0
+01-Apr-2024 12:02:18.756 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+01-Apr-2024 12:02:18.757 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            5.15.0-101-generic
+01-Apr-2024 12:02:18.757 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+01-Apr-2024 12:02:18.757 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-11-openjdk-amd64
+01-Apr-2024 12:02:18.757 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           11.0.22+7-post-Ubuntu-0ubuntu220.04.1
+01-Apr-2024 12:02:18.757 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+01-Apr-2024 12:02:18.759 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/admin1/IdeaProjects/Spring_JSTL/JstlTags
+01-Apr-2024 12:02:18.759 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/admin1/Downloads/apache-tomcat-8.5.99
+01-Apr-2024 12:02:18.762 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+01-Apr-2024 12:02:18.762 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+01-Apr-2024 12:02:18.762 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+01-Apr-2024 12:02:18.762 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+01-Apr-2024 12:02:18.763 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+01-Apr-2024 12:02:18.763 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/admin1/Downloads/apache-tomcat-8.5.99
+01-Apr-2024 12:02:18.763 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/admin1/IdeaProjects/Spring_JSTL/JstlTags
+01-Apr-2024 12:02:18.764 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/admin1/IdeaProjects/Spring_JSTL/JstlTags/temp
+01-Apr-2024 12:02:18.764 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/admin1/IdeaProjects/Spring_JSTL/JstlTags/conf/logging.properties
+01-Apr-2024 12:02:18.764 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+01-Apr-2024 12:02:18.764 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/snap/intellij-idea-community/493/lib/idea_rt.jar=36789:/snap/intellij-idea-community/493/bin
+01-Apr-2024 12:02:18.764 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+01-Apr-2024 12:02:18.764 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+01-Apr-2024 12:02:18.852 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8081"]
+01-Apr-2024 12:02:18.903 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 964 ms
+01-Apr-2024 12:02:19.028 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+01-Apr-2024 12:02:19.029 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/8.5.99]
+01-Apr-2024 12:02:19.066 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/admin1/IdeaProjects/Spring_JSTL/JstlTags/conf/Catalina/localhost/JstlCoreTag.xml]
+01-Apr-2024 12:02:19.817 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/admin1/IdeaProjects/Spring_JSTL/JstlTags/conf/Catalina/localhost/JstlCoreTag.xml] has finished in [751] ms
+01-Apr-2024 12:02:19.821 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8081"]
+01-Apr-2024 12:02:19.836 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 933 ms
+01-Apr-2024 12:03:58.454 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8081"]
+01-Apr-2024 12:03:58.456 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+01-Apr-2024 12:03:58.476 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8081"]
+01-Apr-2024 12:03:58.480 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8081"]
+01-Apr-2024 12:04:02.208 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/8.5.99
+01-Apr-2024 12:04:02.222 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Feb 14 2024 22:52:13 UTC
+01-Apr-2024 12:04:02.222 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 8.5.99.0
+01-Apr-2024 12:04:02.222 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+01-Apr-2024 12:04:02.222 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            5.15.0-101-generic
+01-Apr-2024 12:04:02.223 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+01-Apr-2024 12:04:02.223 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-11-openjdk-amd64
+01-Apr-2024 12:04:02.223 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           11.0.22+7-post-Ubuntu-0ubuntu220.04.1
+01-Apr-2024 12:04:02.223 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+01-Apr-2024 12:04:02.223 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/admin1/IdeaProjects/Spring_JSTL/JstlTags
+01-Apr-2024 12:04:02.224 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/admin1/Downloads/apache-tomcat-8.5.99
+01-Apr-2024 12:04:02.227 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+01-Apr-2024 12:04:02.228 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+01-Apr-2024 12:04:02.229 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+01-Apr-2024 12:04:02.229 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+01-Apr-2024 12:04:02.230 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+01-Apr-2024 12:04:02.230 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/admin1/Downloads/apache-tomcat-8.5.99
+01-Apr-2024 12:04:02.230 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/admin1/IdeaProjects/Spring_JSTL/JstlTags
+01-Apr-2024 12:04:02.230 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/admin1/IdeaProjects/Spring_JSTL/JstlTags/temp
+01-Apr-2024 12:04:02.230 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/admin1/IdeaProjects/Spring_JSTL/JstlTags/conf/logging.properties
+01-Apr-2024 12:04:02.230 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+01-Apr-2024 12:04:02.231 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/snap/intellij-idea-community/493/lib/idea_rt.jar=33027:/snap/intellij-idea-community/493/bin
+01-Apr-2024 12:04:02.231 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+01-Apr-2024 12:04:02.231 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+01-Apr-2024 12:04:02.313 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8081"]
+01-Apr-2024 12:04:02.345 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 860 ms
+01-Apr-2024 12:04:02.448 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+01-Apr-2024 12:04:02.448 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/8.5.99]
+01-Apr-2024 12:04:02.477 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/admin1/IdeaProjects/Spring_JSTL/JstlTags/conf/Catalina/localhost/JstlCoreTag.xml]
+01-Apr-2024 12:04:03.233 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/admin1/IdeaProjects/Spring_JSTL/JstlTags/conf/Catalina/localhost/JstlCoreTag.xml] has finished in [755] ms
+01-Apr-2024 12:04:03.236 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8081"]
+01-Apr-2024 12:04:03.249 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 903 ms
+01-Apr-2024 12:38:05.898 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8081"]
+01-Apr-2024 12:38:05.900 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+01-Apr-2024 12:38:05.919 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8081"]
+01-Apr-2024 12:38:05.923 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8081"]
+01-Apr-2024 12:38:10.087 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/8.5.99
+01-Apr-2024 12:38:10.093 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Feb 14 2024 22:52:13 UTC
+01-Apr-2024 12:38:10.093 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 8.5.99.0
+01-Apr-2024 12:38:10.093 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+01-Apr-2024 12:38:10.094 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            5.15.0-101-generic
+01-Apr-2024 12:38:10.094 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+01-Apr-2024 12:38:10.094 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-11-openjdk-amd64
+01-Apr-2024 12:38:10.094 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           11.0.22+7-post-Ubuntu-0ubuntu220.04.1
+01-Apr-2024 12:38:10.094 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+01-Apr-2024 12:38:10.094 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/admin1/IdeaProjects/Spring_JSTL/JstlTags
+01-Apr-2024 12:38:10.095 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/admin1/Downloads/apache-tomcat-8.5.99
+01-Apr-2024 12:38:10.098 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+01-Apr-2024 12:38:10.098 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+01-Apr-2024 12:38:10.098 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+01-Apr-2024 12:38:10.099 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+01-Apr-2024 12:38:10.099 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+01-Apr-2024 12:38:10.099 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/admin1/Downloads/apache-tomcat-8.5.99
+01-Apr-2024 12:38:10.099 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/admin1/IdeaProjects/Spring_JSTL/JstlTags
+01-Apr-2024 12:38:10.099 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/admin1/IdeaProjects/Spring_JSTL/JstlTags/temp
+01-Apr-2024 12:38:10.099 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/admin1/IdeaProjects/Spring_JSTL/JstlTags/conf/logging.properties
+01-Apr-2024 12:38:10.100 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+01-Apr-2024 12:38:10.100 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/snap/intellij-idea-community/493/lib/idea_rt.jar=36717:/snap/intellij-idea-community/493/bin
+01-Apr-2024 12:38:10.100 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+01-Apr-2024 12:38:10.100 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+01-Apr-2024 12:38:10.207 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8081"]
+01-Apr-2024 12:38:10.241 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 867 ms
+01-Apr-2024 12:38:10.358 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+01-Apr-2024 12:38:10.358 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/8.5.99]
+01-Apr-2024 12:38:10.380 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/admin1/IdeaProjects/Spring_JSTL/JstlTags/conf/Catalina/localhost/JstlCoreTag.xml]
+01-Apr-2024 12:38:11.090 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/admin1/IdeaProjects/Spring_JSTL/JstlTags/conf/Catalina/localhost/JstlCoreTag.xml] has finished in [710] ms
+01-Apr-2024 12:38:11.094 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8081"]
+01-Apr-2024 12:38:11.107 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 865 ms
+01-Apr-2024 12:41:57.722 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8081"]
+01-Apr-2024 12:41:57.723 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+01-Apr-2024 12:41:57.744 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8081"]
+01-Apr-2024 12:41:57.758 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8081"]
+01-Apr-2024 12:42:00.380 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/8.5.99
+01-Apr-2024 12:42:00.387 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Feb 14 2024 22:52:13 UTC
+01-Apr-2024 12:42:00.387 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 8.5.99.0
+01-Apr-2024 12:42:00.387 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+01-Apr-2024 12:42:00.387 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            5.15.0-101-generic
+01-Apr-2024 12:42:00.388 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+01-Apr-2024 12:42:00.388 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /usr/lib/jvm/java-11-openjdk-amd64
+01-Apr-2024 12:42:00.388 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           11.0.22+7-post-Ubuntu-0ubuntu220.04.1
+01-Apr-2024 12:42:00.388 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Ubuntu
+01-Apr-2024 12:42:00.388 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /home/admin1/IdeaProjects/Spring_JSTL/JstlTags
+01-Apr-2024 12:42:00.388 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /home/admin1/Downloads/apache-tomcat-8.5.99
+01-Apr-2024 12:42:00.391 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+01-Apr-2024 12:42:00.391 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+01-Apr-2024 12:42:00.391 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+01-Apr-2024 12:42:00.392 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+01-Apr-2024 12:42:00.392 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+01-Apr-2024 12:42:00.392 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/home/admin1/Downloads/apache-tomcat-8.5.99
+01-Apr-2024 12:42:00.393 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/home/admin1/IdeaProjects/Spring_JSTL/JstlTags
+01-Apr-2024 12:42:00.393 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/home/admin1/IdeaProjects/Spring_JSTL/JstlTags/temp
+01-Apr-2024 12:42:00.417 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/home/admin1/IdeaProjects/Spring_JSTL/JstlTags/conf/logging.properties
+01-Apr-2024 12:42:00.418 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+01-Apr-2024 12:42:00.418 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -javaagent:/snap/intellij-idea-community/493/lib/idea_rt.jar=39585:/snap/intellij-idea-community/493/bin
+01-Apr-2024 12:42:00.418 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dfile.encoding=UTF-8
+01-Apr-2024 12:42:00.419 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+01-Apr-2024 12:42:00.505 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8081"]
+01-Apr-2024 12:42:00.538 INFO [main] org.apache.catalina.startup.Catalina.load Initialization processed in 1000 ms
+01-Apr-2024 12:42:00.664 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+01-Apr-2024 12:42:00.665 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/8.5.99]
+01-Apr-2024 12:42:00.695 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [/home/admin1/IdeaProjects/Spring_JSTL/JstlTags/conf/Catalina/localhost/JstlCoreTag.xml]
+01-Apr-2024 12:42:01.357 INFO [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [/home/admin1/IdeaProjects/Spring_JSTL/JstlTags/conf/Catalina/localhost/JstlCoreTag.xml] has finished in [662] ms
+01-Apr-2024 12:42:01.360 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8081"]
+01-Apr-2024 12:42:01.373 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in 834 ms
