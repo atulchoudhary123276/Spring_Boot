@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Context docBase="/home/admin1/IdeaProjects/Spring_JSTL/JstlTags/src/main/webapp">
+  <Resources cacheMaxSize="10240">
+    <PostResources base="/home/admin1/.m2/repository/javax/servlet/jstl/1.2/jstl-1.2.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/jstl-1.2.jar"/>
+  </Resources>
+</Context>
