@@ -11,16 +11,10 @@ import javax.validation.constraints.NotNull;
 @Setter
 @NoArgsConstructor
 public class EmployeeDto {
-
     private Long empId;
-    @NotEmpty(message = "firstName is not Empty")
     private String firstName;
-    @NotEmpty(message = "lastName is not Empty")
     private String lastName;
-    @NotEmpty(message = "address is not Empty")
     private String address;
-    @NotEmpty(message = "city is not Empty")
     private String city;
-    @NotNull(message = "pincode is not Empty")
-    private Integer pincode;
+    private String pincode;
 }

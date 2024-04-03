@@ -1,5 +1,4 @@
 package com.example.FilterInterceptor.interceptor;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.lang.Nullable;
@@ -9,7 +8,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 @Component
 public class TestInterceptor  implements HandlerInterceptor {
     private static final Logger log = LoggerFactory.getLogger(TestInterceptor.class);

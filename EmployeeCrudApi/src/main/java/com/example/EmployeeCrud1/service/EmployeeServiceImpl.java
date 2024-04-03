@@ -3,88 +3,108 @@ package com.example.EmployeeCrud1.service;
 import com.example.EmployeeCrud1.dto.EmployeeDto;
 import com.example.EmployeeCrud1.model.EmployeeModel;
 import com.example.EmployeeCrud1.repository.EmployeeRepository;
-import org.modelmapper.ModelMapper;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
+import java.lang.reflect.Field;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
     @Autowired
     private EmployeeRepository employeeRepository;
     @Autowired
-    ModelMapper modelMapper;
+    UtilityService utilityService;
 
+    // For creating an Employee (Create)
     @Override
     public EmployeeDto saveEmployee(EmployeeDto employee) {
-        return convertToDto(employeeRepository.save(convertToModel(employee)));
+        return utilityService.convertToDto(employeeRepository.save(utilityService.convertToModel(employee)));
     }
 
+    //Get  AllEmployees
     @Override
     public List<EmployeeDto> fetchAllEmployees() {
-        return convertToDtoList(employeeRepository.findAll());
+        return utilityService.convertToDtoList(employeeRepository.findAll());
+
     }
 
+    //Get  Employee by id (Read)
     @Override
     public EmployeeDto getEmployeeById(Long id) {
-       return employeeRepository.findById(id).
-            map(this::convertToDto).orElse(null);
+        return employeeRepository.findById(id).
+                map(employeeModel -> utilityService.convertToDto(employeeModel))
+                .orElse(null);
     }
 
+    //Update Employee AllResource by Id (Update)
     @Override
     public EmployeeDto updateEmployeeById(Long id, EmployeeDto employee) {
-        return employeeRepository.findById(id)
-                .map(employeeModel -> {
-                    employeeModel.setFirstName(employee.getFirstName());
-                    employeeModel.setLastName(employee.getLastName());
-                    employeeModel.setAddress(employee.getAddress());
-                    employeeModel.setCity(employee.getCity());
-                    employeeModel.setPincode(employee.getPincode());
-                    //update existing resource
-                    return convertToDto(employeeRepository.save(employeeModel));
-                })
-                //create new resource when it not exists
-                .orElseGet(()-> convertToDto(employeeRepository.save(convertToModel(employee))));
+        Optional<EmployeeModel> emp = employeeRepository.findById(id);
+        if (emp.isEmpty()) {
+            //create resource if it not exists
+            return saveEmployee(employee);
+        }
+        //update all existing resource
+        EmployeeModel employeeModel = emp.get();
+        employeeModel.setPincode(employee.getPincode());
+        employeeModel.setCity(employee.getCity());
+        employeeModel.setFirstName(employee.getFirstName());
+        employeeModel.setAddress(employee.getAddress());
+        employeeModel.setLastName(employee.getLastName());
+        return utilityService.convertToDto(employeeRepository.save(employeeModel));
     }
 
+    //Update Employee Resource by Id (PartiallyUpdate)
     @Override
-    public EmployeeDto updateEmployeePartiallyById(Long id, Map<String, Object> fields) {
-        return employeeRepository.findById(id)
-                .map(employeeModel -> {
-                    for (Map.Entry<String, Object> entry : fields.entrySet()) {
-                        String key = entry.getKey();
-                        Object value = entry.getValue();
-                        switch (key) {
-                            case "firstName":
-                                employeeModel.setFirstName(value.toString());
-                                break;
-                            case "lastName":
-                                employeeModel.setLastName(value.toString());
-                                break;
-                            case "address":
-                                employeeModel.setAddress(value.toString());
-                                break;
-                            case "city":
-                                employeeModel.setCity(value.toString());
-                                break;
-                            case "pincode":
-                                employeeModel.setPincode((Integer) value);
-                                break;
-                            default:
-                                // handle unknown keys
-                                return null;
-                        }
-                    }
-                    // update resource fields only if all keys were recognized
-                    return convertToDto(employeeRepository.save(employeeModel));
+    public Object updateEmployeePartiallyById(Long id, EmployeeDto employeeDto) {
+        Optional<EmployeeModel> employeeModelOptional = employeeRepository.findById(id);
+        if(employeeModelOptional.isPresent()){
+            boolean updated=false;
+            List<String> errorList=new ArrayList<>();
+            EmployeeModel employeeModel=employeeModelOptional.get();
+            if(employeeDto.getFirstName()!=null) {
+                if (StringUtils.isNotBlank(employeeDto.getFirstName()))
+                    employeeModel.setFirstName(employeeDto.getFirstName());
+                else
+                    errorList.add("firstName can't be empty");
+            }
+            if(employeeDto.getLastName()!=null) {
+                if (StringUtils.isNotBlank(employeeDto.getLastName()))
+                    employeeModel.setLastName(employeeDto.getLastName());
+                else
+                    errorList.add("lastName can't be empty");
+            }
+            if(employeeDto.getAddress()!=null){
+                if(StringUtils.isNotBlank(employeeDto.getAddress()))
+                    employeeModel.setAddress(employeeDto.getAddress());
+                else
+                    errorList.add("address can't be empty");
+            }
+            if(employeeDto.getCity()!=null){
+                if(StringUtils.isNotBlank(employeeDto.getCity()))
+                    employeeModel.setAddress(employeeDto.getCity());
+                else
+                    errorList.add("city can't be empty");
+            }
+            if(employeeDto.getPincode()!=null){
+                if(StringUtils.isNotBlank(employeeDto.getPincode()))
+                    employeeModel.setPincode(employeeDto.getPincode());
+                else
+                    errorList.add("pincode can't be empty");
+            }
+            if(errorList.isEmpty())
+                return utilityService.convertToDto(employeeRepository.save(employeeModel));
+            return errorList;
+        }
+        return null;
 
-                })
-                .orElse(null);  //return null if resource not exist
+
     }
 
+    //delete Employee by Id
     @Override
     public boolean deleteEmployeeById(Long id) {
         if (employeeRepository.findById(id).isPresent()) {
@@ -93,23 +113,9 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
         return false;
     }
+
     @Override
-    public boolean existById(Long id){
+    public boolean existById(Long id) {
         return employeeRepository.existsById(id);
     }
-
-    private EmployeeDto convertToDto(EmployeeModel employeeModel) {
-        return modelMapper.map(employeeModel, EmployeeDto.class);
-    }
-
-    private List<EmployeeDto> convertToDtoList(List<EmployeeModel> employeeModelList) {
-        return employeeModelList.stream()
-                .map(employeeModel -> modelMapper.map(employeeModel, EmployeeDto.class))
-                .collect(Collectors.toList());
-    }
-
-    private EmployeeModel convertToModel(EmployeeDto employeeDto) {
-        return modelMapper.map(employeeDto, EmployeeModel.class);
-    }
-
 }

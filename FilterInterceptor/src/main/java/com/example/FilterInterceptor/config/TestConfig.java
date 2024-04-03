@@ -10,11 +10,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class TestConfig implements WebMvcConfigurer {
-//    TestInterceptor testInterceptor;
-//    TestConfig(TestInterceptor testInterceptor) {
-//        this.testInterceptor = testInterceptor;
-//    }
-
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new TestInterceptor()).addPathPatterns("/*");
 

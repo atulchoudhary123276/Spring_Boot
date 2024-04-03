@@ -17,15 +17,10 @@ public class EmployeeModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long empId;
-    @NotEmpty
     private String firstName;
-    @NotEmpty
     private String lastName;
-    @NotEmpty
     private String address;
-    @NotEmpty
     private String city;
-    @NotNull
-    private Integer pincode;
+    private String pincode;
 
 }

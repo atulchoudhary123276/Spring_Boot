@@ -15,7 +15,7 @@ public interface EmployeeService {
     EmployeeDto updateEmployeeById(Long id, EmployeeDto employee);
 
     boolean deleteEmployeeById(Long id);
-    EmployeeDto updateEmployeePartiallyById(Long id, Map<String, Object> fields);
-   boolean existById(Long id);
+    Object updateEmployeePartiallyById(Long id, EmployeeDto employeeDto);
+    boolean existById(Long id);
 
 }
