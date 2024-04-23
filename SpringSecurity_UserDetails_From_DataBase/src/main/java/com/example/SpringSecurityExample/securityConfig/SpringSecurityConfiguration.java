@@ -16,56 +16,14 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @Configuration
 @EnableWebSecurity
 public class SpringSecurityConfiguration  {
-//    @Override
-//    protected void configure(AuthenticationManagerBuilder auth)
-//            throws Exception
-//    {
-//        auth.inMemoryAuthentication()
-//                .passwordEncoder(passwordEncoder())
-//                .withUser("gfg")
-//                .password(passwordEncoder().encode("pass"))
-//                .roles("ADMIN")
-//                .and()
-//                .passwordEncoder(passwordEncoder())
-//                .withUser("user")
-//                .password(passwordEncoder().encode("pass"))
-//                .roles("BASIC");
-//    }
-//
-//    // Annotation
+
     @Bean
     // Method
     public PasswordEncoder passwordEncoder()
     {
         return NoOpPasswordEncoder.getInstance();
     }
-//
-//    // Annotation
-//    @Override
-//    // Method
-//    protected void configure(HttpSecurity http) throws Exception
-//    {
-//
-//        http.authorizeRequests()
-//                .antMatchers("/basic")
-//                .hasAnyRole("BASIC", "ADMIN")
-//                .antMatchers("/admin")
-//                .hasRole("ADMIN")
-//                .antMatchers("/")
-//                .permitAll()
-//                .anyRequest()
-//                .authenticated()
-//                .and()
-//                .formLogin()
-//                .permitAll()
-//                .loginPage("/login")
-//                .usernameParameter("username")
-//                .and()
-//                .logout()
-//                .logoutRequestMatcher(
-//                        new AntPathRequestMatcher("/logout"))
-//                .permitAll();
-//    }
+
     @Bean
     public UserDetailsService userDetailsService(){
         return new LoginService();

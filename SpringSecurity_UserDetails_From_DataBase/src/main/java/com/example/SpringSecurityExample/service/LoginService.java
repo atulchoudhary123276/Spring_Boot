@@ -1,5 +1,4 @@
 package com.example.SpringSecurityExample.service;
-
 import com.example.SpringSecurityExample.model.User;
 import com.example.SpringSecurityExample.repository.Repo;
 import com.example.SpringSecurityExample.model.UserLoginToModel;
