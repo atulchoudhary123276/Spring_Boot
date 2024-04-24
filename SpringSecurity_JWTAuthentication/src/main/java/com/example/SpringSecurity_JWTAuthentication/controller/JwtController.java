@@ -7,6 +7,7 @@ import com.example.SpringSecurity_JWTAuthentication.service.CustomUserDetailsSer
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -14,6 +15,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.HashMap;
+import java.util.List;
 
 @RestController
 public class JwtController {
@@ -30,17 +34,22 @@ public class JwtController {
             this.authenticationManager.
                     authenticate(new UsernamePasswordAuthenticationToken(userModel.getUserName(),userModel.getPassword()));
         }
-        catch (UsernameNotFoundException e){
-            e.printStackTrace();
-            throw  new Exception("Invalid crenditials");
+        catch (BadCredentialsException e){
+            throw new Exception("INVALID_CREDENTIALS", e);
         }
 
         //after authenticated
         UserDetails userDetails = customUserDetailsService.loadUserByUsername(userModel.getUserName());
 
+        //add  extra things into token
+        HashMap<String,Object> info=new HashMap<>();
+        info.put("name","Atul Chaudhary");
+        info.put("address","Noida");
+        this.jwtUtils.addIntoToken(info);
         //now generate token
         String token= this.jwtUtils.generateToken(userDetails);
             //{token:value}
+
         return ResponseEntity.ok().body(new JwtResponse(token));
     }
 }
