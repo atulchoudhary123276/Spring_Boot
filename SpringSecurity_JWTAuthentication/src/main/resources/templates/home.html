@@ -1,10 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/XSL/Transform">
 <head>
     <meta charset="UTF-8">
     <title>Home Page</title>
 </head>
 <body>
-<h3>Hi ,welcome to HomePage of Jwt Authentication</h3>
+<h3>Hi, welcome to the HomePage of JWT Authentication</h3>
+<p>JWT Token: <span th:text="${token}"></span></p>
+<script>
+    // Function to extract JWT token from response header and set it in local storage
+    function extractAndSetJwtToken() {
+        // Extract JWT token from response header (assuming it's stored in a header named "Authorization")
+        const jwtToken = getJwtTokenFromResponseHeader();
+        if (!jwtToken) {
+            console.error('JWT token not found in response header');
+            return;
+        }
+
+        // Set JWT token in local storage
+        localStorage.setItem('jwtToken', jwtToken);
+
+        // Redirect to profile page
+       // window.location.href = '/profile'; // Replace '/profile' with the URL of your profile page
+    }
+
+    // Function to extract JWT token from response header
+    function getJwtTokenFromResponseHeader() {
+        // Get response headers from the previous request
+        const headers = new Headers();
+        headers.append('Content-Type', 'application/json'); // Add any required headers for the request
+        // Assuming "fetch" was used to make the request and "response" is the response object
+        const jwtToken = response.headers.get('Authorization');
+        console.log(jwtToken);
+        return jwtToken;
+    }
+
+    // Call the function to extract and set JWT token when the page loads
+    window.onload = extractAndSetJwtToken;
+</script>
+
 </body>
 </html>

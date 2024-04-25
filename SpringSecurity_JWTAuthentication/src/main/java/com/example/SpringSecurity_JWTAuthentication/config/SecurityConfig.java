@@ -37,6 +37,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+
         http              //for setting the role restriction on this endpoint
                 .authorizeRequests()
                         .antMatchers("/home")
@@ -47,7 +48,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .cors()
                 .disable()
                 .authorizeRequests()
-                .antMatchers("/token")
+                .antMatchers("/token","/form")
                 .permitAll()
                 .anyRequest().authenticated();
 
