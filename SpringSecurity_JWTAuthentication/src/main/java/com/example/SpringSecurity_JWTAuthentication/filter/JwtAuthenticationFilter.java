@@ -29,25 +29,20 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         //get jwt
         //bearer
         //validate
-        String token = httpServletRequest.getParameter("token");
         String requestURI = httpServletRequest.getRequestURI();
         String requestTokenHeader = httpServletRequest.getHeader("Authorization");
         String userName = null;
         String jwtToken = null;
-        if ((requestTokenHeader != null && requestTokenHeader.startsWith("Bearer "))|| (token!=null && token.startsWith("Bearer "))) {
-            jwtToken=(token.isBlank())?requestTokenHeader.substring(7):token.substring(7);
-//            jwtToken = ;
-            System.out.println("tokn "+jwtToken);
+        if (requestTokenHeader != null && requestTokenHeader.startsWith("Bearer ")) {
+            jwtToken = requestTokenHeader.substring(7);
             try {
                 userName = this.utils.extractUsername(jwtToken);
             } catch (Exception e) {
                 System.out.println("Token not valid ");
             }
-        }
-        else if (!requestURI.contains("/token")) {
+        } else if (!requestURI.contains("/token")) {
             System.out.println("Authorization Header not Found in RequestHeader");
         }
-
         //securitycontexholder set token
         if (userName != null && SecurityContextHolder.getContext().getAuthentication() == null) {
             UserDetails userDetails = customUserDetailsService.loadUserByUsername(userName);
@@ -61,6 +56,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         }
         filterChain.doFilter(httpServletRequest, httpServletResponse);
 
-
     }
+
 }

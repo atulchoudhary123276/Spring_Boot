@@ -51,7 +51,7 @@
 
 <div class="login-container">
     <h2>Login</h2>
-    <form action="/token" id="loginForm" method="post">
+    <form id="loginForm">
         <div class="form-group">
             <label for="userName">UserName</label>
             <input type="text" id="username" name="userName" required>
@@ -61,10 +61,56 @@
             <input type="password" id="password" name="password" required>
         </div>
         <div class="form-group">
-            <button type="submit">Login</button>
+            <button type="button" onclick="login()">Login</button>
         </div>
     </form>
 </div>
+<script>
+    function login() {
+        var form = document.getElementById('loginForm');
+        var formData = new FormData(form);
+
+        fetch('/token', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.token) {
+                localStorage.setItem('token', data.token);
+                // Call the setAuthorizationHeader function after successfully setting the token
+                setAuthorizationHeader();
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    // Adding token to headers for subsequent requests
+    function setAuthorizationHeader() {
+        var token = localStorage.getItem('token');
+        if (token) {
+            // Set token in the Authorization header for subsequent requests
+            fetch('/home', {
+                headers: {
+                    'Authorization': 'Bearer ' + token
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // If the response is successful, redirect to the new home page
+                    window.location.href = 'home.html'; // Change 'new_home.html' to your desired page
+                } else {
+                    console.error('Error:', response.statusText);
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+         else {
+            // Handle the case when token is not available
+        }
+    }
+</script>
+
 
 </body>
 </html>

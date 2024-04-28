@@ -1,5 +1,6 @@
 package com.example.SpringSecurity_JWTAuthentication.controller;
 
+import com.example.SpringSecurity_JWTAuthentication.SecurityException.ApiResponse;
 import com.example.SpringSecurity_JWTAuthentication.helper.JwtUtils;
 import com.example.SpringSecurity_JWTAuthentication.model.JwtResponse;
 import com.example.SpringSecurity_JWTAuthentication.model.UserModel;
@@ -34,7 +35,7 @@ public class JwtController {
     private JwtUtils jwtUtils;
 
     @PostMapping("/token")
-    public String genrateToken(@ModelAttribute UserModel userModel, HttpServletResponse response) throws Exception {
+    public ResponseEntity<?> genrateToken(@ModelAttribute UserModel userModel, HttpServletResponse response) throws Exception {
         try {
             this.authenticationManager.
                     authenticate(new UsernamePasswordAuthenticationToken(userModel.getUserName(), userModel.getPassword()));
@@ -51,23 +52,21 @@ public class JwtController {
             //{token:value}
 
 //        return ResponseEntity.ok().body(new JwtResponse(token));
-//            ModelAndView modelAndView = new ModelAndView("home"); // Replace "home" with the name of your view page
-//            modelAndView.addObject("token", token);
             // Set JWT token in the response header
-            response.setHeader(HttpHeaders.AUTHORIZATION, "Bearer " + token);
+//            response.setHeader(HttpHeaders.AUTHORIZATION, "Bearer " + token);
 
-            return "redirect:/home?token=Bearer " + token;
-//            return ResponseEntity.ok()
-//                    .header(
-//                            HttpHeaders.AUTHORIZATION,
-//                            this.jwtUtils.generateToken(userDetails)
-//                    )
-//                    .body(userDetails);
+//            return "redirect:/home?token=Bearer " + token;
+            return ResponseEntity.ok()
+                    .header(
+                            HttpHeaders.AUTHORIZATION,
+                            token
+                    )
+                    .body(new JwtResponse(token));
         } catch (BadCredentialsException ex) {
             ModelAndView errorModelAndView = new ModelAndView("errorPage"); // Return error page if authentication fails
             errorModelAndView.setStatus(HttpStatus.UNAUTHORIZED);
-            return "error occured";
-//            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+//            return "error occured";
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
     }
 }
