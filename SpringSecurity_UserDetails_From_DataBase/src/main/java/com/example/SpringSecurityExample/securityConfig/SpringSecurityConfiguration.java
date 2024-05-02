@@ -62,6 +62,7 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .httpBasic();          //use for authentication purpose ,bcz we override this method and did not provide any
                                                 //authentication provider ,so that we want this BASICAUTHENTICATIONPRROVIDER
+                                                //authentication provider ,so that we want this BASICAUTHENTICATIONPRROVIDER
 
 
     }
