@@ -43,6 +43,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .withUser("atul")
                 .password(passwordEncoder().encode("aa"))
                 .roles("ADMIN");
+
     }
 
     // Annotation
