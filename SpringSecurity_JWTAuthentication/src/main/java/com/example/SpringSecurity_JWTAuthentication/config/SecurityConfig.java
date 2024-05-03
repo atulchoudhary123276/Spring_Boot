@@ -41,7 +41,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http              //for setting the role restriction on this endpoint
                 .authorizeRequests()
                         .antMatchers("/home")
-                                .hasRole("ADMIN");
+                                .hasRole("ADMIN");      //wire ROLE_ prefix is not mandatory ,bcz it has .hasRole()
         http
                 .csrf()
                 .disable()
