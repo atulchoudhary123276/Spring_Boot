@@ -1,0 +1,8 @@
+//pluginManagement {
+//    repositories {
+//        gradlePluginPortal()
+//    }
+//}
+rootProject.name = 'Spring_MultiModules'
+include ':Module1'
+project(':Module1').projectDir=new  File('../Module1')
